@@ -14,7 +14,13 @@ Problem Statement: AI based frame interpolation, video generation and display sy
 
 ## Documentation
 
-- **[Client-Side Modules](CLIENT_SIDE_MODULES.md)**: Comprehensive documentation of all client-side video generation and interpolation modules
+- **[Complete Architecture](ARCHITECTURE.md)**: Comprehensive documentation of ALL modules including:
+  - Data acquisition from WMS services
+  - Model architecture and training (IFRNet & SepConv)
+  - Server-side processing with PyTorch
+  - Client-side processing with TensorFlow.js
+  - Deployment modes and integration
+- **[Client-Side Modules](CLIENT_SIDE_MODULES.md)**: Detailed documentation of client-side video generation and interpolation modules
 
 ## Further Improvements to be Expected
 
