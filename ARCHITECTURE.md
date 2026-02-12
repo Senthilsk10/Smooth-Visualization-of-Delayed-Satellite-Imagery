@@ -217,13 +217,13 @@ class Charbonnier_Ada:
    - `loss_dis`: Flow distillation loss (if ground truth flow available)
 
 3. **Optimizer:**
-   - Not specified in code (externally configured)
-   - Likely Adam optimizer with learning rate scheduling
+   - Configuration not specified in code
+   - Externally configured during training
 
 **Pre-trained Weights:**
 - File: `IFRNet_S_Vimeo90K.pth`
-- Dataset: Vimeo90K (video frame interpolation benchmark)
 - Model variant: IFRNet-S (Small version)
+- Based on filename, likely trained on Vimeo90K dataset (a video frame interpolation benchmark)
 
 #### Inference
 
@@ -284,10 +284,6 @@ Separable Convolution model used for **browser-based** interpolation (TensorFlow
 - Contains model training code
 - Dataset preparation
 - Conversion to TensorFlow.js format
-
-**Training Dataset:**
-- Likely trained on video frame pairs
-- Optimized for satellite imagery characteristics
 
 ---
 
