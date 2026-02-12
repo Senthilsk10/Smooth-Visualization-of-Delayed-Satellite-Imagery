@@ -33,15 +33,15 @@ This is the main JavaScript file that handles all client-side video generation a
 
 #### B. Interpolation Engine
 - **`interpolation_tree`**: A lookup table defining the hierarchical interpolation structure
-  - Generates 30 frames from 2 input frames
-  - Uses binary tree-like structure for efficient interpolation
+  - Generates 28 intermediate frames from 2 input frames (30 frames total)
+  - Uses hierarchical binary subdivision approach that recursively halves intervals
   - Maps target frame indices to their parent frame pairs
 
 - **`interpolate(url1, url2)`**: Main interpolation function
   - Recursively generates intermediate frames between two input images
   - Uses memoization to avoid redundant computations
   - Implements hierarchical frame generation using the interpolation tree
-  - Returns a dictionary of all interpolated frames (indices 1-30)
+  - Returns an object containing all interpolated frames (indices 1-30)
 
 - **`get_interpolated_image(index)`**: Recursive helper function
   - Computes interpolated frames on-demand
