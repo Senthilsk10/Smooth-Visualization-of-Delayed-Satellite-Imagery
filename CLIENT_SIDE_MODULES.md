@@ -147,13 +147,14 @@ Provides styling for the UI components but does not contain processing logic.
 The client uses a **hierarchical binary interpolation approach**:
 
 1. Start with 2 frames (frame 1 and frame 30)
-2. Generate middle frame (frame 15) first
-3. Recursively generate intermediate frames:
-   - Between 1-15: generate frame 7
-   - Between 15-30: generate frame 23
+2. Generate approximate middle frame (frame 15) first using frames 1 and 30
+3. Recursively generate intermediate frames in a hierarchical manner:
+   - Between 1-15: generate frame 7, then subdivide further (frames 2, 3, 4, 5, 6)
+   - Between 15-30: generate frame 23, then subdivide further (frames 16-22, 24-29)
+   - Between 7-15: generate frame 11, then subdivide (frames 8, 9, 10, 12, 13, 14)
    - Continue subdividing until all 30 frames are generated
 
-This approach minimizes error accumulation compared to sequential interpolation.
+This hierarchical approach (defined in `interpolation_tree`) minimizes error accumulation compared to sequential interpolation by generating frames from the nearest available parent frames rather than strictly sequential processing.
 
 ## Performance Considerations
 
